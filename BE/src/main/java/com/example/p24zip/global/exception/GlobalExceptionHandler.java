@@ -12,8 +12,8 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<ApiResponse<Void>> handleCustomNotFound(ResourceNotFoundException ex) {
         return ResponseEntity
-                .status(HttpStatus.NOT_FOUND)
-                .body(ApiResponse.error(ex.getMessage(), "NOT_FOUND"));
+            .status(HttpStatus.NOT_FOUND)
+            .body(ApiResponse.error("NOT_FOUND", ex.getMessage()));
     }
 }
 
